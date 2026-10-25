@@ -1,6 +1,6 @@
 
 for (const form of document.getElementsByTagName("form")) {
-    const result = document.getElementById("result");
+    const result = form.querySelector(".result");
     if (form.action === "https://api.web3forms.com/submit") {
         form.addEventListener("submit", async function (e) {
             e.preventDefault();
