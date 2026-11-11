@@ -16,7 +16,10 @@ for (const form of document.getElementsByTagName("form")) {
                         "Content-Type": "application/json",
                         "Accept": "application/json",
                     },
-                    body: JSON.stringify(Object.fromEntries(data)),
+                    body: JSON.stringify({
+                        "URL": window.location.href,
+                        ...Object.fromEntries(data),
+                    }),
                 });
                 const json = await res.json();
                 if (res.status === 200) {
